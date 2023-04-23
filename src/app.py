@@ -47,14 +47,14 @@ def post_member():
 
     member = jackson_family.add_member(new_member)
 
-    return jsonify(member)
+    return member
 
 @app.route('/member/<int:id>', methods=['DELETE'])
 def delete_member(id):
 
-    member = jackson_family.delete_member(id)
+    response = jackson_family.delete_member(id)
 
-    return jsonify(member), 200
+    return response
 
 # this only runs if `$ python src/app.py` is executed
 if __name__ == '__main__':
